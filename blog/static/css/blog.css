@@ -58,13 +58,19 @@ h1, h2, h3, h4 {
     margin-bottom: 70px;
 }
 
+.menu-icons {
+  float: right;
+  color: #000000;
+  margin-right: 10px;
+}
+
 .post h2 a, .post h2 a:visited {
     color: #C25100;
 }
 
-.black {
-  color: #000000;
-}
+/* .black {
+
+} */
 .back {
   background-color: none;
   border: none;
