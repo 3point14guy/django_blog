@@ -13,10 +13,13 @@
   <body>
     <div class="page-header">
       {% if user.is_authenticated %}
-        <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span> New Post</a>
-        <a href="{% url 'post_draft_list' %}" class="top-menu"><span class="glyphicon glyphicon-edit"></span> Your Drafts</a>
+        <a href="{% url 'post_new' %}" class="top-menu"><strong><span class="glyphicon glyphicon-plus"></span> New Post</strong></a>
+        <a href="{% url 'post_draft_list' %}" class="top-menu"><strong><span class="glyphicon glyphicon-edit"></span> Your Drafts</strong></a>
+        <a href="{% url 'logout' %}" class="top-menu"><strong><span class="glyphicon glyphicon-log-out"></span> Log out</strong></a><p class="top-menu">Hello {{ user.username }} </p>
+      {% else %}
+        <a href="{% url 'login' %}" class="top-menu"><strong><span class="glyphicon glyphicon-log-in"></span> Login</strong></a>
       {% endif %}
-      <h1><a href="{% url 'post_list' %}">Pieguy's Django Blog</a></h1>
+      <a href="{% url 'post_list' %}"><h1>Pieguy's Django Blog</h1></a>
       <p class="by-line"><strong>A web app created in Python with Django</strong></p>
 
     </div>
