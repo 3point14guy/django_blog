@@ -1,12 +1,14 @@
 h1 a, h2 a {
   color: #C25100;
-  font-family: 'Lobster';
+  /* font-family: 'Lobster'; */
+  font-family: 'Shadows Into Light', cursive;
 }
 body {
+  background-color: #f5daba;
   padding-left: 15px;
 }
 .page-header {
-    background-color: #C25100;
+    background-color: #e09a05;
     margin-top: 0;
     padding: 20px 20px 20px 40px;
 }
@@ -22,8 +24,9 @@ body {
 }
 
 h1, h2, h3, h4 {
-    color: #C25100;
-    font-family: 'Lobster', cursive;
+    color: #e09a05;
+    /* font-family: 'Lobster', cursive; */
+    font-family: 'Shadows Into Light', cursive;
 }
 
 .date {
@@ -55,8 +58,8 @@ h1, h2, h3, h4 {
 }
 
 .post {
-    background-color: #f0f0f0;
-    border: 1px solid ##e8e4e4;
+    background-color: #fff2e5;
+    border: 1px solid #e8e4e4;
     margin-bottom: 50px;
     padding: 15px;
 }
@@ -71,19 +74,39 @@ h1, h2, h3, h4 {
     color: #C25100;
 }
 
-/* .black {
-
-} */
 .back {
   background-color: inherit;
   border: none;
+  color: #363535;
+}
+
+.comment-indicators {
+  color: #828282;
 }
 
 footer {
   margin-left: 50px;
 }
 
-.comment {
-  margin: 20px 0px 20px 20px;
+.comment-container {
   background-color: #fdfafa;
+  margin: 0 0 0 20px;
+}
+
+
+
+.comments {
+  margin: 0px 0px 10px 20px;
+  padding: 10px 0;
+}
+
+.comment {
+  padding: 5px 5px 5px 20px;
+  margin: 5px 10px 5px 5px;
+  background-color: #fff2e5;
+}
+
+.post div.comment-container:first-child {
+  background-color: yellow;
+  margin: 20px 20px 0px 0px;
 }

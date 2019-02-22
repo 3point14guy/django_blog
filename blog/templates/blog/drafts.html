@@ -8,6 +8,6 @@
       <p>{{ post.text|truncatechars:200 }}</p>
     </div>
   {% empty%}
-    <p>You have no drafts pending. <a href="{% url 'post_edit' %}"> New Post</a></p>
+    <p>You have no drafts pending. <a href="{% url 'post_new' %}"> Create New Post</a>?</p>
   {% endfor %}
 {% endblock %}

@@ -13,27 +13,42 @@
     {% else %}
       {% if user.is_authenticated %}
         <a href="{% url 'post_publish' pk=post.pk %}" class="menu-icons"><strong><span class="glyphicon glyphicon-upload"></span> Publish</strong></a>
-        {% endif %}
+      {% endif %}
     {% endif %}
     <h2>{{ post.title }}</h2>
+    <br>
     <p>{{ post.text|linebreaksbr }}</p>
 
     <hr>
+    <a href="{% url 'add_comment_to_post' pk=post.pk %}" class="back"><strong><span class="glyphicon glyphicon-comment"></span> Add Comment</strong></a>
+<br>
+<br>
     {% for comment in post.comments.all %}
-      <div class="row comment">
-        <div class="col-md-2">
-        </div>
-        <div class="col-md-9">
+      {% if user.is_authenticated or comment.approved_comment %}
+      <div class="comment-container">
+
+        <div class="row comments">
+        <!-- <div class="col-md-1">
+        </div> -->
+          <div class="comment">
           <div class="date">
             {{ comment.created_date }}
+            {% if not comment.approved_comment %}
+              <a class="back" href="{% url 'comment_remove' pk=comment.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
+              <a class="back" href="{% url 'comment_approve' pk=comment.pk %}"><span class="glyphicon glyphicon-ok"></span></a>
+            {% endif %}
           </div>
           <strong>{{ comment.author }}</strong>
           <p>{{ comment.text|linebreaksbr }}</p>
+          </div>
         </div>
-        {% empty %}
-          <p>No comments yet...</p>
-      </div>
-    {% endfor %}
-  </div>
+      {% endif %}
 
+      {% empty %}
+        <p class="comment">No comments yet...</p>
+      </div>
+
+
+    {% endfor %}
+</div>
 {% endblock %}
